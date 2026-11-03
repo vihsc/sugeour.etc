@@ -22,4 +22,6 @@ html, body {
 
 header {
   background-color: #00345e;
+  height: 120px;
+  padding: 30px;
 }
