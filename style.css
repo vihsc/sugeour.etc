@@ -13,3 +13,9 @@ body {
 .trending {
   background-color: #386661;
 }
+
+header {
+  background-color: #00345e;
+  padding: 25px;
+  width: 300px;
+}
