@@ -5,3 +5,11 @@ p {
 body {
   background-color: #128da3;
 }
+
+.games {
+  background-color: purple;
+}
+
+.trending {
+  background-color: #386661;
+}
