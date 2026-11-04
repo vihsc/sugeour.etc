@@ -12,7 +12,7 @@
     "img": "assets/images/r.png",
     "src": "https://scratch.mit.edu/projects/149349124/embed",
     "category": "Racing"
-  }
+  },
   {
     "id": "boba",
     "title": "boba tea game",
@@ -26,7 +26,8 @@
     "img": "assets/images/r.png",
     "src": "https://scratch.mit.edu/projects/149349124/embed",
     "category": "Racing"
-  }{
+  },
+  {
     "id": "boba",
     "title": "boba tea game",
     "img": "assets/images/ant.png",
@@ -39,7 +40,8 @@
     "img": "assets/images/r.png",
     "src": "https://scratch.mit.edu/projects/149349124/embed",
     "category": "Racing"
-  }{
+  },
+  {
     "id": "boba",
     "title": "boba tea game",
     "img": "assets/images/ant.png",
@@ -52,5 +54,5 @@
     "img": "assets/images/r.png",
     "src": "https://scratch.mit.edu/projects/149349124/embed",
     "category": "Racing"
-  }
+  },
 ]
