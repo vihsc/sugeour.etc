@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sugeour</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+      <div class="admin-box">
+        <h2>🎮 Add New Game Code Generator</h2>
+        <p style="color: #aaa; font-size: 14px;">Fill this out to generate code for your site seamlessly.</p>
+        <hr style="border-color: #333; margin: 15px 0;">
+
+        <label>Game Unique ID (e.g., retro-bowl, drive-mad):</label>
+        <input type="text" id="add-id" placeholder="lowercase-no-spaces">
+
+        <label>Display Name (e.g., Retro Bowl):</label>
+        <input type="text" id="add-name" placeholder="Game Title">
+
+        <label>Game Embed Source Link:</label>
+        <input type="text" id="add-src" placeholder="https://gamedistribution.com...">
+
+        <button onclick="generateGameCode()" class="play-btn" style="width: 100%; width: -webkit-fill-available;">Generate Code Snippets</button>
+
+        <div id="result-area" style="display: none; margin-top: 25px;">
+            <h3>📋 1. Paste this into your Homepage (`index.html`) Grid:</h3>
+            <div class="output-box" id="html-output"></div>
+
+            <h3 style="margin-top: 20px;">⚙️ 2. Paste this inside your `gameDatabase` in `games/index.html`:</h3>
+            <div class="output-box" id="js-output"></div>
+        </div>
+    </div>
+
+    <script>
+        function generateGameCode() {
+            const id = document.getElementById('add-id').value.trim().toLowerCase().replace(/\s+/g, '-');
+            const name = document.getElementById('add-name').value.trim();
+            const src = document.getElementById('add-src').value.trim();
+
+            if (!id || !name || !src) {
+                alert("Please fill in all information slots first!");
+                return;
+            }
+
+            // HTML Form format matching your exact card layout
+            const htmlSnippet = `<!-- ${name} Card -->\n<div class="game-card">\n    <h3>${name}</h3>\n    <form action="games/">\n        <input type="hidden" name="id" value="${id}">\n        <button type="submit" class="play-btn">Play Game</button>\n    </form>\n</div>`;
+
+            // JS Object layout format matching your library setup
+            const jsSnippet = `"${id}": {\n    title: "${name}",\n    src: "${src}"\n},`;
+
+            document.getElementById('html-output').innerText = htmlSnippet;
+            document.getElementById('js-output').innerText = jsSnippet;
+            document.getElementById('result-area').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
