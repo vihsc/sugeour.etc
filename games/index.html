@@ -26,6 +26,44 @@
             <iframe id="game-screen" src="" width="100%" height="600" scrolling="no" frameborder="0" allowfullscreen></iframe>
         </div>
     </main>
+
+     <script>
+        // 1. A dictionary holding all your game IDs and iframe sources
+        const gameDatabase = {
+            "Dino": {
+                title: "chrome dino",
+                src: "https://sciencemathedu.github.io/chrome-dino"
+            },
+            "fight3": {
+                title: "class 1014",
+                src: "https://speededu111.github.io/g68/class-1014"
+            },
+            "ducklife": {
+                title: "ducklife",
+                src: "https://ducklife.online/1.embed"
+            },
+            "puzzle1": {
+                title: "tricky puzzle game",
+                src: "https://speededu111.github.io/g16/class-422"
+            },
+            "game1": {
+                title: "cozy farm game",
+                src: "https://scratch.mit.edu/projects/1396100433/embed"
+            }
+        };
+
+        // 2. Read the "?id=" value from the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('id');
+
+        // 3. Find the game in database and update the page elements dynamically
+        if (gameId && gameDatabase[gameId]) {
+            const gameData = gameDatabase[gameId];
+            document.title = gameData.title + " - sugeour";
+            document.getElementById('playing-text').innerText = "Now Playing: " + gameData.title;
+            document.getElementById('game-screen').src = gameData.src;
+        }
+    </script>
     
     <script>
         const urlParams = new URLSearchParams(window.location.search);
