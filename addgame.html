@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sugeour Code Utility</title>
+    <link rel="stylesheet" href="style.c
+</head>
+<body>
+<input type="text" id="add-id" placeholder="game-id">
+<input type="text" id="add-title" placeholder="Game Title">
+<input type="text" id="add-img" placeholder="thumb.png">
+<input type="text" id="add-src" placeholder="https://...">
+<button onclick="saveGame()">Add Game Instantly</button>
+
+<script>
+function saveGame() {
+    const id = document.getElementById('add-id').value;
+    const title = document.getElementById('add-title').value;
+    const img = document.getElementById('add-img').value;
+    const src = document.getElementById('add-src').value;
+
+    let savedGames = JSON.parse(localStorage.getItem('sugeour_custom_games')) || [];
+    savedGames.push({ id, title, img, src });
+    
+    localStorage.setItem('sugeour_custom_games', JSON.stringify(savedGames));
+    alert("Game added to your dashboard! Go check the homepage.");
+}
+</script>
+
+</body>
+</html>
