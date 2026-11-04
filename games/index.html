@@ -66,5 +66,23 @@
             window.location.href = "https://vihsc.github.io/sugeour.etc/games/410.html"
         }
     </script>
+    
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('id');
+
+        fetch('../games.json')
+            .then(response => response.json())
+            .then(games => {
+                const game = games.find(g => g.id === gameId);
+                if (game) {
+                    document.title = `${game.title} - sugeour`;
+                    document.getElementById('playing-heading').innerText = game.title;
+                    document.getElementById('game-screen').src = game.src;
+                } else {
+                    document.getElementById('playing-heading').innerText = "Game Not Found!";
+                }
+            });
+    </script>
 </body>
 </html>
