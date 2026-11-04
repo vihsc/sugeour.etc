@@ -61,9 +61,6 @@
             document.title = gameData.title + " - sugeour";
             document.getElementById('playing-text').innerText = "Now Playing: " + gameData.title;
             document.getElementById('game-screen').src = gameData.src;
-        } else {
-            // Fallback text if the ID is missing or mistyped
-            window.location.href = "https://vihsc.github.io/sugeour.etc/games/410.html"
         }
     </script>
     
@@ -81,6 +78,7 @@
                     document.getElementById('game-screen').src = game.src;
                 } else {
                     document.getElementById('playing-heading').innerText = "Game Not Found!";
+                    window.location.href = "https://vihsc.github.io/sugeour.etc/games/410.html"
                 }
             });
     </script>
