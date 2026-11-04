@@ -1,0 +1,16 @@
+[
+  {
+    "id": "biomutant-battle",
+    "title": "Biomutant Battle",
+    "img": "assets/images/biomutant.png",
+    "src": "https://crazygames.com",
+    "category": "Action"
+  },
+  {
+    "id": "neon-racer",
+    "title": "Neon Racer 3D",
+    "img": "assets/images/neon-racer.png",
+    "src": "https://repl.co",
+    "category": "Racing"
+  }
+]
