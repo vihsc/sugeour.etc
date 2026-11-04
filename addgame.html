@@ -2,57 +2,75 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sugeour</title>
+    <title>Sugeour Code Utility</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body { font-family: monospace; background: #111; color: #fff; padding: 20px; }
+        .panel { max-width: 600px; margin: 40px auto; padding: 20px; background: #1a1a1a; border-radius: 8px; border: 1px solid #333; }
+        input { width: 100%; padding: 10px; margin: 8px 0 16px 0; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 4px; box-sizing: border-box; }
+        .output { background: #000; padding: 12px; border-radius: 4px; border: 1px solid #333; color: #39ff14; white-space: pre-wrap; margin-bottom: 20px; font-size: 13px; text-align: left; }
+        button { background: #28a745; color: white; padding: 12px; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-weight: bold; font-size: 15px; }
+    </style>
 </head>
 <body>
-      <div class="admin-box">
-        <h2>🎮 Add New Game Code Generator</h2>
-        <p style="color: #aaa; font-size: 14px;">Fill this out to generate code for your site seamlessly.</p>
-        <hr style="border-color: #333; margin: 15px 0;">
 
-        <label>Game Unique ID (e.g., retro-bowl, drive-mad):</label>
-        <input type="text" id="add-id" placeholder="lowercase-no-spaces">
+<div class="panel">
+    <h3>🎮 Sugeour Game Content Builder</h3>
+    <hr style="border-color: #333; margin-bottom: 15px;">
+    
+    <label>Game ID Code (lowercase, no spaces):</label>
+    <input type="text" id="id" placeholder="e.g., retro-bowl">
 
-        <label>Display Name (e.g., Retro Bowl):</label>
-        <input type="text" id="add-name" placeholder="Game Title">
+    <label>Game Display Title:</label>
+    <input type="text" id="title" placeholder="e.g., Retro Bowl">
 
-        <label>Game Embed Source Link:</label>
-        <input type="text" id="add-src" placeholder="https://gamedistribution.com...">
+    <label>Thumbnail Image File Name (placed in your main directory):</label>
+    <input type="text" id="img" placeholder="e.g., retrobowl.png">
 
-        <button onclick="generateGameCode()" class="play-btn" style="width: 100%; width: -webkit-fill-available;">Generate Code Snippets</button>
+    <label>Game Embed Player URL:</label>
+    <input type="text" id="src" placeholder="https://...">
 
-        <div id="result-area" style="display: none; margin-top: 25px;">
-            <h3>📋 1. Paste this into your Homepage (`index.html`) Grid:</h3>
-            <div class="output-box" id="html-output"></div>
+    <button onclick="buildSnippets()">Generate Code Elements</button>
 
-            <h3 style="margin-top: 20px;">⚙️ 2. Paste this inside your `gameDatabase` in `games/index.html`:</h3>
-            <div class="output-box" id="js-output"></div>
-        </div>
+    <div id="results" style="display:none; margin-top:25px;">
+        <h4>📋 1. Paste this block directly inside your target &lt;div class="games"&gt; layout (index.html):</h4>
+        <div class="output" id="html-out"></div>
+
+        <h4>⚙️ 2. Paste this object inside your javascript database framework (games/index.html):</h4>
+        <div class="output" id="js-out"></div>
     </div>
+</div>
 
-    <script>
-        function generateGameCode() {
-            const id = document.getElementById('add-id').value.trim().toLowerCase().replace(/\s+/g, '-');
-            const name = document.getElementById('add-name').value.trim();
-            const src = document.getElementById('add-src').value.trim();
+<script>
+function buildSnippets() {
+    const id = document.getElementById('id').value.trim().toLowerCase().replace(/\s+/g, '-');
+    const title = document.getElementById('title').value.trim();
+    const img = document.getElementById('img').value.trim();
+    const src = document.getElementById('src').value.trim();
 
-            if (!id || !name || !src) {
-                alert("Please fill in all information slots first!");
-                return;
-            }
+    if(!id || !title || !img || !src) return alert("Please fill out all input fields first!");
 
-            // HTML Form format matching your exact card layout
-            const htmlSnippet = `<!-- ${name} Card -->\n<div class="game-card">\n    <h3>${name}</h3>\n    <form action="games/">\n        <input type="hidden" name="id" value="${id}">\n        <button type="submit" class="play-btn">Play Game</button>\n    </form>\n</div>`;
+    // Generates the exact card matching your exact structure, including the image asset tag
+    const htmlBlock = `    <div class="gamecard">
+        <img src="${img}" alt="${title}" class="game-thumb" style="width:100%; height:auto; border-radius:4px; margin-bottom:8px;">
+        <h3>${title}</h3>
+        <form action="games/">
+            <input type="hidden" name="id" value="${id}">
+            <button type="submit" class="play-btn">Play Game</button>
+        </form>
+    </div>`;
 
-            // JS Object layout format matching your library setup
-            const jsSnippet = `"${id}": {\n    title: "${name}",\n    src: "${src}"\n},`;
+    // Generates the matching dictionary record object
+    const jsBlock = `"${id}": {
+    title: "${title}",
+    src: "${src}"
+},`;
 
-            document.getElementById('html-output').innerText = htmlSnippet;
-            document.getElementById('js-output').innerText = jsSnippet;
-            document.getElementById('result-area').style.display = 'block';
-        }
-    </script>
+    document.getElementById('html-out').innerText = htmlBlock;
+    document.getElementById('js-out').innerText = jsBlock;
+    document.getElementById('results').style.display = 'block';
+}
+</script>
+
 </body>
 </html>
