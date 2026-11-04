@@ -123,5 +123,24 @@
         <!-- This grid is populated automatically via JavaScript -->
         <div class="games" id="games-grid"></div>
     </div>
+   <script>
+        // Fetch and load games from your JSON file
+        fetch('./games.json')
+            .then(response => response.json())
+            .then(games => {
+                const grid = document.getElementById('games-grid');
+                games.forEach(game => {
+                    const card = document.createElement('div');
+                    card.className = 'gamecard';
+                    card.innerHTML = `
+                        <img src="${game.img}" alt="${game.title}" style="width:100%; border-radius:4px;">
+                        <h3>${game.title}</h3>
+                        <a href="games/index.html?id=${game.id}" class="play-btn">Play Game</a>
+                    `;
+                    grid.appendChild(card);
+                });
+            })
+            .catch(err => console.error("Error loading games list:", err));
+    </script>
 </body>
 </html>
