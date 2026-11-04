@@ -26,7 +26,33 @@
             <iframe id="game-screen" src="" width="100%" height="600" scrolling="no" frameborder="0" allowfullscreen></iframe>
         </div>
     </main>
-    
+    <style>   
+    // Your default starting hardcoded dictionary list
+    const gameDatabase = {
+        "scratch1": { title: "Scratch Project 1", src: "https://mit.edu" }
+    };
+
+    // Grab the ?id= parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const gameId = urlParams.get('id');
+
+    // Check your browser memory bank for the game ID too!
+    const savedGames = JSON.parse(localStorage.getItem('sugeour_custom_games')) || [];
+    const customGame = savedGames.find(g => g.id === gameId);
+
+    if (gameId && gameDatabase[gameId]) {
+        // Load default game
+        document.title = gameDatabase[gameId].title + " - sugeour";
+        document.getElementById('game-screen').src = gameDatabase[gameId].src;
+    } else if (customGame) {
+        // Load the game you added dynamically via JS!
+        document.title = customGame.title + " - sugeour";
+        document.getElementById('game-screen').src = customGame.src;
+    } else {
+        document.getElementById('playing-text').innerText = "Game not found.";
+    }
+    </script>
+
     <script>
         // 1. A dictionary holding all your game IDs and iframe sources
         const gameDatabase = {
