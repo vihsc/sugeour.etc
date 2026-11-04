@@ -2,14 +2,14 @@
   {
     "id": "boba",
     "title": "boba tea game",
-    "img": "assets/images/biomutant.png",
+    "img": "assets/images/ant.png",
     "src": "https://scratch.mit.edu/projects/607062201/embed",
     "category": "Action"
   },
   {
     "id": "neon-racer",
     "title": "Neon Racer 3D",
-    "img": "assets/images/neon-racer.png",
+    "img": "assets/images/r.png",
     "src": "https://scratch.mit.edu/projects/149349124/embed",
     "category": "Racing"
   }
