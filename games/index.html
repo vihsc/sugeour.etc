@@ -16,8 +16,56 @@
       </nav>
       <p>welcome to sugeour! play any free game in this list. we have all of the games</p>
     </header>
-  <div class="game window">
-    <h1>insert game here</h1>
-  </div>
+    
+    <main style="max-width: 960px; margin: 20px auto; text-align: center; padding: 0 15px;">
+        <h2 id="playing-text">Now Playing...</h2>
+        <br>
+        
+        <div style="background: #000; border-radius: 8px; overflow: hidden; display: inline-block; width: 100%; max-width: 800px;">
+            <!-- Notice the iframe has an id="game-screen" and its src starts blank -->
+            <iframe id="game-screen" src="" width="100%" height="600" scrolling="no" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </main>
+    
+    <script>
+        // 1. A dictionary holding all your game IDs and iframe sources
+        const gameDatabase = {
+            "parkour": {
+                title: "Parkour Block Maker",
+                src: "https://html5.gamedistribution.com/919cce8b4dd144b099fd2b7cfcbde933/?gd_sdk_referrer_url=https://github.iogames"
+            },
+            "aliens": {
+                title: "Looking For Aliens",
+                src: "https://html5.gamedistribution.com/85c2c02db7314e40b717545ebaf8ee2c/?gd_sdk_referrer_url=https://github.iogames"
+            },
+            "scratch1": {
+                title: "Scratch Project 1",
+                src: "https://mit.edu"
+            },
+            "scratch2": {
+                title: "Scratch Project 2",
+                src: "https://mit.edu"
+            },
+            "scratch3": {
+                title: "Scratch Project 3",
+                src: "https://mit.edu"
+            }
+        };
+
+        // 2. Read the "?id=" value from the URL parameters
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('id');
+
+        // 3. Find the game in database and update the page elements dynamically
+        if (gameId && gameDatabase[gameId]) {
+            const gameData = gameDatabase[gameId];
+            document.title = gameData.title + " - sugeour";
+            document.getElementById('playing-text').innerText = "Now Playing: " + gameData.title;
+            document.getElementById('game-screen').src = gameData.src;
+        } else {
+            // Fallback text if the ID is missing or mistyped
+            document.getElementById('playing-text').innerText = "Game not found. Return to Home Page.";
+        }
+    </script>
 </body>
 </html>
