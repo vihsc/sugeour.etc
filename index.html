@@ -5,27 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sugeour</title>
     <link rel="stylesheet" href="style.css">
-    <script>
-    // 1. Look inside the browser memory for any added games
-    const savedGames = JSON.parse(localStorage.getItem('sugeour_custom_games')) || [];
-    const gamesContainer = document.querySelector('.games');
-
-    // 2. Loop through them and draw the cards onto your homepage automatically
-    savedGames.forEach(game => {
-        const card = document.createElement('div');
-        card.className = 'gamecard';
-        card.innerHTML = `
-            <img src="${game.img}" alt="${game.title}" class="game-thumb" style="width:100%; height:auto; border-radius:4px; margin-bottom:8px;">
-            <h3>${game.title}</h3>
-            <form action="games/">
-                <input type="hidden" name="id" value="${game.id}">
-                <button type="submit" class="play-btn">Play Game</button>
-            </form>
-        `;
-        gamesContainer.appendChild(card);
-    });
-</script>
-
 </head>
 <body>
     <header>
