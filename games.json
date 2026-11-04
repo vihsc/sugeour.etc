@@ -14,45 +14,45 @@
     "category": "Racing"
   },
   {
-    "id": "boba",
+    "id": "boba-2",
     "title": "boba tea game",
     "img": "assets/images/ant.png",
     "src": "https://scratch.mit.edu/projects/607062201/embed",
     "category": "Action"
   },
   {
-    "id": "neon-racer",
+    "id": "neon-racer-2",
     "title": "Neon Racer 3D",
     "img": "assets/images/r.png",
     "src": "https://scratch.mit.edu/projects/149349124/embed",
     "category": "Racing"
   },
   {
-    "id": "boba",
+    "id": "boba-3",
     "title": "boba tea game",
     "img": "assets/images/ant.png",
     "src": "https://scratch.mit.edu/projects/607062201/embed",
     "category": "Action"
   },
   {
-    "id": "neon-racer",
+    "id": "neon-racer-3",
     "title": "Neon Racer 3D",
     "img": "assets/images/r.png",
     "src": "https://scratch.mit.edu/projects/149349124/embed",
     "category": "Racing"
   },
   {
-    "id": "boba",
+    "id": "boba-4",
     "title": "boba tea game",
     "img": "assets/images/ant.png",
     "src": "https://scratch.mit.edu/projects/607062201/embed",
     "category": "Action"
   },
   {
-    "id": "neon-racer",
+    "id": "neon-racer-4",
     "title": "Neon Racer 3D",
     "img": "assets/images/r.png",
     "src": "https://scratch.mit.edu/projects/149349124/embed",
     "category": "Racing"
-  },
+  }
 ]
