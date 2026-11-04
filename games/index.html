@@ -27,9 +27,13 @@
         </div>
     </main>
 
-     <script>
-        // 1. A dictionary holding all your game IDs and iframe sources
-        const gameDatabase = {
+       <script>
+        // 1. Get the current game ID from the web link parameter (?id=xxx)
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameId = urlParams.get('id');
+
+        // 2. Hardcoded fallback list (Your manual entry backup)
+        const localDatabase = {
             "Dino": {
                 title: "chrome dino",
                 src: "https://sciencemathedu.github.io/chrome-dino"
@@ -52,36 +56,40 @@
             }
         };
 
-        // 2. Read the "?id=" value from the URL parameters
-        const urlParams = new URLSearchParams(window.location.search);
-        const gameId = urlParams.get('id');
+        const titleElement = document.getElementById('playing-text');
+        const iframeElement = document.getElementById('game-screen');
 
-        // 3. Find the game in database and update the page elements dynamically
-        if (gameId && gameDatabase[gameId]) {
-            const gameData = gameDatabase[gameId];
-            document.title = gameData.title + " - sugeour";
-            document.getElementById('playing-text').innerText = "Now Playing: " + gameData.title;
-            document.getElementById('game-screen').src = gameData.src;
+        if (gameId) {
+            // STEP A: First check if the requested ID matches our hardcoded list
+            if (localDatabase[gameId]) {
+                const gameData = localDatabase[gameId];
+                document.title = gameData.title + " - sugeour";
+                titleElement.innerText = "Now Playing: " + gameData.title;
+                iframeElement.src = gameData.src;
+            } else {
+                // STEP B: If it's NOT hardcoded, ONLY THEN look into the games.json file
+                fetch('../games.json')
+                    .then(response => response.json())
+                    .then(games => {
+                        const game = games.find(g => g.id === gameId);
+                        if (game) {
+                            document.title = `${game.title} - sugeour`;
+                            titleElement.innerText = "Now Playing: " + game.title;
+                            iframeElement.src = game.src;
+                        } else {
+                            // If it's nowhere, completely drop use out and redirect to 410
+                            titleElement.innerText = "Game Not Found!";
+                            window.location.href = "https://vihsc.github.io/sugeour.etc/games/410.html";
+                        }
+                    })
+                    .catch(err => {
+                        console.error("Error reading your games.json file:", err);
+                        titleElement.innerText = "Error loading game database.";
+                    });
+            }
+        } else {
+            titleElement.innerText = "No game selected!";
         }
-    </script>
-    
-    <script>
-        const urlParams = new URLSearchParams(window.location.search);
-        const gameId = urlParams.get('id');
-
-        fetch('../games.json')
-            .then(response => response.json())
-            .then(games => {
-                const game = games.find(g => g.id === gameId);
-                if (game) {
-                    document.title = `${game.title} - sugeour`;
-                    document.getElementById('playing-heading').innerText = game.title;
-                    document.getElementById('game-screen').src = game.src;
-                } else {
-                    document.getElementById('playing-heading').innerText = "Game Not Found!";
-                    window.location.href = "https://vihsc.github.io/sugeour.etc/games/410.html"
-                }
-            });
     </script>
 </body>
 </html>
