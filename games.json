@@ -15,44 +15,44 @@
   },
   {
     "id": "baldis",
-    "title": "baldis basics",
+    "title": "shooter stars",
     "img": "assets/images/ant.png",
-    "src": "https://app-142549.games.s3.yandex.net/142549/i2r8c66qzsx5nety9ym98fdeb1xche91/index.html?sdk=%2Fsdk%2F_%2Fv2.2f14a50521d68e9766e1.js#origin=https%3A%2F%2Fplayhop.com&app-id=142549&device-type=desktop",
+    "src": "https://speededu111.github.io/g22/class-394",
     "category": "Action"
   },
   {
-    "id": "neon-racer-2",
-    "title": "Neon Racer 3D",
+    "id": "dribble",
+    "title": "street dribble",
     "img": "assets/images/r.png",
-    "src": "https://scratch.mit.edu/projects/149349124/embed",
+    "src": "https://speededu111.github.io/g66/class-973",
     "category": "Racing"
   },
   {
-    "id": "boba-3",
-    "title": "boba tea game",
+    "id": "blumgi",
+    "title": "blumgi ball",
     "img": "assets/images/ant.png",
-    "src": "https://scratch.mit.edu/projects/607062201/embed",
+    "src": "https://speededu111.github.io/g16/class-419",
     "category": "Action"
   },
   {
-    "id": "neon-racer-3",
-    "title": "Neon Racer 3D",
+    "id": "basket",
+    "title": "basket ball stars",
     "img": "assets/images/r.png",
-    "src": "https://scratch.mit.edu/projects/149349124/embed",
+    "src": "https://speededu111.github.io/g66/class-911",
     "category": "Racing"
   },
   {
-    "id": "boba-4",
-    "title": "boba tea game",
+    "id": "4ducks",
+    "title": "ducklife 4 evolution",
     "img": "assets/images/ant.png",
-    "src": "https://scratch.mit.edu/projects/607062201/embed",
+    "src": "https://speededu111.github.io/g5/class-561",
     "category": "Action"
   },
   {
-    "id": "neon-racer-4",
-    "title": "Neon Racer 3D",
+    "id": "prisone",
+    "title": "escaping the prison",
     "img": "assets/images/r.png",
-    "src": "https://scratch.mit.edu/projects/149349124/embed",
+    "src": "https://speededu111.github.io/g97/class-780",
     "category": "Racing"
   }
 ]
