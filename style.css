@@ -13,7 +13,7 @@ html, body {
 }
 
 .games {
-  background-color: purple;
+  background: linear-gradient(#34b9ed, #041b8f);
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
