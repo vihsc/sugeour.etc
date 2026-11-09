@@ -13,7 +13,7 @@ html, body {
 }
 
 .games {
-  background-color: #00c3ff;
+  background-color: #737cff;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -23,7 +23,6 @@ html, body {
 }
 
 .trending {
-  background: linear-gradient(#34b9ed, #041b8f);
   margin-top: 30px;
 }
 
