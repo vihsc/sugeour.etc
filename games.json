@@ -30,7 +30,7 @@
   {
     "id": "blumgi",
     "title": "blumgi ball",
-    "img": "assets/images/ant.png",
+    "img": "https://vihsc.github.io/sugeour.etc/images/blumgi-ball-logo.png",
     "src": "https://speededu111.github.io/g16/class-419",
     "category": "Action"
   },
@@ -53,6 +53,13 @@
     "title": "escaping the prison",
     "img": "assets/images/r.png",
     "src": "https://speededu111.github.io/g97/class-780",
+    "category": "Racing"
+  },
+  {
+    "id": "scratchwor",
+    "title": "scratch world",
+    "img": "https://vihsc.github.io/sugeour.etc/images/Screenshot%202026-11-10%20075005.png",
+    "src": "https://turbowarp.org/988844423/embed",
     "category": "Racing"
   }
 ]
