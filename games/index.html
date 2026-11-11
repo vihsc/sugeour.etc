@@ -106,23 +106,6 @@
                             titleElement.innerText = "Now Playing: " + game.title;
                             iframeElement.src = game.src;
                         } else {
-                            fetch('./rgames.json')
-                                .then(response => response.json())
-                                .then(games => {
-                                    const grid = document.getElementById('games-grid');
-                                    games.forEach(game => {
-                                        const card = document.createElement('div');
-                                        card.className = 'gamecard';
-                                        card.innerHTML = `
-                                            <img src="${game.img}" alt="${game.title}" style="width:100%; border-radius:4px;">
-                                            <h3>${game.title}</h3>
-                                            <a href="games/index.html?id=${game.id}" class="play-btn">Play Game</a>
-                                        `;
-                                        grid.appendChild(card);
-                                    });
-                                })
-                                .catch(err => console.error("Error loading games list:", err));
-                            } else {
                             // If it's nowhere, completely drop use out and redirect to 410
                             titleElement.innerText = "Game Not Found!";
                             window.location.href = "https://vihsc.github.io/sugeour.etc/games/410.html";
@@ -131,7 +114,7 @@
                     .catch(err => {
                         console.error("Error reading your games.json file:", err);
                         titleElement.innerText = "Error loading game database.";
-                    });
+                });
             }
         } else {
             titleElement.innerText = "No game selected!";
