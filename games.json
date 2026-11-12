@@ -61,5 +61,12 @@
     "img": "https://vihsc.github.io/sugeour.etc/images/Screenshot%202026-11-10%20075005.png",
     "src": "https://turbowarp.org/988844423/embed",
     "category": "Racing"
-  }
+  },
+  {
+    "id": "-bgame",
+    "title": "-b",
+    "img": "assets/images/r.png",
+    "src": "https://vihsc.github.io/sugeour.etc/games/-b.html",
+    "category": "Racing"
+  },
 ]
