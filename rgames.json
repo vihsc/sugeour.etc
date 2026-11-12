@@ -21,10 +21,38 @@
     "category": "Action"
   },
   {
-    "id": "undertale",
-    "title": "undertale",
-    "img": "https://vihsc.github.io/sugeour.etc/images/undertale.webp",
-    "src": "https://pluhmath.github.io/games/Undertale/Undertale-main/index.html",
+    "id": "beans",
+    "title": "find the beans",
+    "img": "/nope",
+    "src": "https://scratch.mit.edu/projects/1385916913/embed",
+    "category": "Action"
+  },
+  {
+    "id": "eggofanimals",
+    "title": "fish eggs for animals",
+    "img": "assets/images/ant.png",
+    "src": "https://playgama.com/export/game/fish-eggs-for-animals",
+    "category": "Action"
+  },
+  {
+    "id": "ragedoll-hit",
+    "title": "ragdoll hit",
+    "img": "assets/images/ant.png",
+    "src": "https://funny-school.github.io/r1/ragdollhit/",
+    "category": "Action"
+  },
+  {
+    "id": "plusbaldi",
+    "title": "baldis bascis plus",
+    "img": "htte%20tanks.jpg",
+    "src": "https://funny-school.github.io/b/baldi-plus/",
+    "category": "Action"
+  },
+  {
+    "id": "hole-io",
+    "title": "hole.io",
+    "img": "ssss",
+    "src": "https://funny-school.github.io/h1/hole.io/",
     "category": "Action"
   }
 ]
