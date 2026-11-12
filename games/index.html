@@ -105,10 +105,19 @@
                             document.title = `${game.title} - sugeour`;
                             titleElement.innerText = "Now Playing: " + game.title;
                             iframeElement.src = game.src;
-                        } else {
+                        } else{
+                            fetch('../rgames.json')
+                            .then(response => response.json())
+                            .then(games => {
+                            const game = games.find(g => g.id === gameId);
+                            if (game) {
+                                document.title = `${game.title} - sugeour`;
+                                titleElement.innerText = "Now Playing: " + game.title;
+                                iframeElement.src = game.src;
+                            } else {
                             // If it's nowhere, completely drop use out and redirect to 410
-                            titleElement.innerText = "Game Not Found!";
-                            window.location.href = "https://vihsc.github.io/sugeour.etc/games/410.html";
+                                titleElement.innerText = "Game Not Found!";
+                                window.location.href = "https://vihsc.github.io/sugeour.etc/games/410.html";
                         }
                     })
                     .catch(err => {
