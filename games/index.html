@@ -32,7 +32,7 @@
         <div class="games" id="rgames-grid"></div>
     </div>
 
-       <script>
+    <script>
         // 1. Get the current game ID from the web link parameter (?id=xxx)
         const urlParams = new URLSearchParams(window.location.search);
         const gameId = urlParams.get('id');
@@ -96,7 +96,7 @@
                 titleElement.innerText = "Now Playing: " + gameData.title;
                 iframeElement.src = gameData.src;
             } else {
-                // STEP B: If it's NOT hardcoded, ONLY THEN look into the games.json file
+                // STEP B: If it's NOT hardcoded, check games.json first
                 fetch('../games.json')
                     .then(response => response.json())
                     .then(games => {
@@ -105,25 +105,30 @@
                             document.title = `${game.title} - sugeour`;
                             titleElement.innerText = "Now Playing: " + game.title;
                             iframeElement.src = game.src;
-                        } else{
-                            fetch('../rgames.json')
-                            .then(response => response.json())
-                            .then(games => {
-                            const game = games.find(g => g.id === gameId);
+                        } else {
+                            // STEP C: If not in games.json, check rgames.json
+                            return fetch('../rgames.json').then(response => response.json());
+                        }
+                    })
+                    .then(rgames => {
+                        // If the previous step returned rgames (because it wasn't in games.json)
+                        if (rgames && Array.isArray(rgames)) {
+                            const game = rgames.find(g => g.id === gameId);
                             if (game) {
                                 document.title = `${game.title} - sugeour`;
                                 titleElement.innerText = "Now Playing: " + game.title;
                                 iframeElement.src = game.src;
                             } else {
-                            // If it's nowhere, completely drop use out and redirect to 410
+                                // If it's nowhere, redirect to 410 page
                                 titleElement.innerText = "Game Not Found!";
                                 window.location.href = "https://vihsc.github.io/sugeour.etc/games/410.html";
+                            }
                         }
                     })
                     .catch(err => {
-                        console.error("Error reading your games.json file:", err);
+                        console.error("Error reading game databases:", err);
                         titleElement.innerText = "Error loading game database.";
-                });
+                    });
             }
         } else {
             titleElement.innerText = "No game selected!";
