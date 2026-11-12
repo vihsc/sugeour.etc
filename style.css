@@ -27,7 +27,7 @@ html, body {
 }
 
 header {
-  background: linear-gradient(blue, lightblue);
+  background: linear-gradient(#4f738f, #0e67ab);
   height: 120px;
   padding: 30px;
 }
