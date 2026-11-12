@@ -49,6 +49,13 @@
     "category": "Action"
   },
   {
+    "id": "undertale",
+    "title": "undertale",
+    "img": "https://vihsc.github.io/sugeour.etc/images/undertale.webp",
+    "src": "https://pluhmath.github.io/games/Undertale/Undertale-main/index.html",
+    "category": "Action"
+  },
+  {
     "id": "hole-io",
     "title": "hole.io",
     "img": "ssss",
