@@ -20,25 +20,11 @@
     "src": "https://script.google.com/macros/s/AKfycbymevkeavNOsB5HAuBlRXCr11dpWboVy58LIy4v_Np9hzx4NgD3Os9Uow5yrKylc2uu/exec",
     "category": "Action"
   },
-    {
+  {
     "id": "undertale",
     "title": "undertale",
     "img": "https://vihsc.github.io/sugeour.etc/images/undertale.webp",
     "src": "https://pluhmath.github.io/games/Undertale/Undertale-main/index.html",
-    "category": "Action"
-  },
-  {
-    "id": "breakout45%idle",
-    "title": "idle breakout",
-    "img": "https://vihsc.github.io/sugeour.etc/images/idlebreakout.png",
-    "src": "https://gibbat2.github.io/Games/games/idle-breakout/",
-    "category": "Action"
-  },
-  {
-    "id": "adventure-capitalist",
-    "title": "adventure capitalist",
-    "img": "https://vihsc.github.io/sugeour.etc/images/adventurecapitalist.png",
-    "src": "https://gibbat2.github.io/Games/games/adventurecapitalist/",
     "category": "Action"
   }
 ]
